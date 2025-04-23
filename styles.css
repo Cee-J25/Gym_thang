@@ -1,0 +1,11 @@
+@import url("/css/global/boilerplate.css");
+@import url("/css/Componenets/header.css");
+@import url("/css/global/button.css");
+@import url("/css/global/font.css");
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
