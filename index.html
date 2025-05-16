@@ -1,102 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset ="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Something...</title>
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
-    <body>
-
-        <header class="header">
-            <a href="/">
-                <img class="logo" src="/assets/Arthur.svg" alt="Logo" width="25" height="15"/>                
-            </a>
-            <a href="" class="button dark">Get Started</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Global Market Analysis</h1>
+            <p>Real-time trend analysis for Gold and USD/JPY</p>
         </header>
 
-        <main>
-<!--          <section>
-                <header>
-                    <h1>Something...</h1>
-                </header>
-                <nav>
-                    <ul>
-                        <li><a href = "">Home</a></li>
-                        <li><a href = "">About</a></li>
-                        <li><a href = "">Project</a></li>
-                        <li><a href = "">Education</a></li>
-                    </ul>
-                </nav>
-            </section>
-        -->
-            <section class="hero">
-                <div class="hero__text">
-                    <h1>Maximise something...</h1>
-                    <p>SOmething...</p>
-                    <a href="/" class="button pink">Get started</a>
-                </div>
-                <picture>
-                    <source media = "(min-width: 50em)" srcset="/assets/Detective.svg" width="150" height="75" class="hero__image">
-                        <img src="/assets/Detective.svg" alt="Logo" width="75" height="45" class="hero__image">
-                                       
-                </picture>
-                
-            </section>
-            <section class="courses">
-                <div class="block title">
-                    <h2>Check out the most you can do when you want to lean <strong>UP</strong>!!!</h2>
-                </div>
-                <div class="block course">
-                    <img src="/assets/Newton.svg" alt="" width="56" height="56">
-                    <h3>Plan Your Routine</h3>
-                    <p>Split your week into workout sections—like cardio one day, strength the next. This keeps things balanced and prevents burnout.</p>
-                    <a href=""></a>                   
-                </div>
-                <div class="block course">
-                    <img src="/assets/Newton.svg" alt="" width="56" height="56">
-                    <h3>Be Flexible</h3>
-                    <p>Listen to your body. If something isn’t working, adjust. Fitness is a journey, not a race.</p>
-                    <a href=""></a>                   
-                </div>
-                <div class="block course">
-                    <img src="/assets/Newton.svg" alt="" width="56" height="56">
-                    <h3>Know Your Body</h3>
-                    <p>Your weight and goals matter. Want to lose fat? Focus on cardio. Trying to gain muscle? Lift more and eat more.</p>
-                    <a href=""></a>                   
-                </div>
-                <div class="block course">
-                    <img src="/assets/Newton.svg" alt="" width="56" height="56">
-                    <h3>Eat Smart</h3>
-                    <p>Fuel up with protein, healthy fats, and carbs. Stay hydrated. Your diet should support your fitness goals.</p>
-                    <a href=""></a>                   
-                </div>
-                <div class="block course">
-                    <img src="/assets/Newton.svg" alt="" width="56" height="56">
-                    <h3>Rest is Key</h3>
-                    <p>Don’t overtrain. Take rest days to let muscles heal and grow. Recovery matters as much as workouts.</p>
-                    <a href=""></a>                   
-                </div>
-                <div class="block course">
-                    <img src="/assets/Newton.svg" alt="" width="56" height="56">
-                    <h3>Track Progress</h3>
-                    <p>Write down workouts, reps, and how you feel. It keeps you focused and shows how far you've come.</p>
-                    <a href=""></a>                   
-                </div>
+        <div class="market-selector">
+            <button id="gold-btn" class="active">Gold (XAU/USD)</button>
+            <button id="usdjpy-btn">USD/JPY</button>
+        </div>
 
-            </section>
-            
+        <div class="chart-container">
+            <canvas id="market-chart"></canvas>
+        </div>
 
-            
-        </main>
+        <div class="trend-analysis">
+            <h2>Trendline Analysis</h2>
+            <div id="trend-status">
+                <p>Loading analysis...</p>
+            </div>
+            <div class="notification-settings">
+                <h3>Notification Settings</h3>
+                <label>
+                    <input type="checkbox" id="whatsapp-notifications" checked>
+                    Enable WhatsApp Notifications
+                </label>
+                <input type="text" id="whatsapp-number" placeholder="WhatsApp number" value="0638266433">
+                <button id="save-settings">Save Settings</button>
+            </div>
+        </div>
 
-        <footer>
-            <a href="?">
-                <img src="/assets/Arthur.svg" alt="Logo" width="25" height="15" class="logo"> 
-            </a>
-            <a href="" class="button purple">Get Started</a>
-            <p><strong>Contacts</strong><br/>Tel:060-341-0100<br/>Emails:lindoradebe14@gmail.com<br/></p>
-        </footer>
-    </body>
+        <div class="historical-trends">
+            <h2>Historical Trend Patterns</h2>
+            <div id="trend-patterns"></div>
+        </div>
+    </div>
+</body>
 </html>
